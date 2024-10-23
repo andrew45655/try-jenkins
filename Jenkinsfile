@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    options{
+        skipStagesAfterUnstable()
+    }
     stages{
         stage("Build"){
             steps{
@@ -9,13 +12,23 @@ pipeline{
         }
         stage("Test"){
             steps{
-                sh "py.test test_calc.py" //--junit-xml test_result/results.xml
+                sh "py.test --junit-xml test_result/results.xml test_calc.py" //
             }
-            //post{
-            //    always{
-            //        junit 'test_result/results.xml'
-            //    }
-            //}
+            post{
+                always{
+                    junit 'test_result/results.xml'
+                }
+            }
+        }
+        stage("Delivery"){
+            steps{
+                sh "pyinstaller --onefile cal.py"
+            }
+            post{
+                always{
+                    archiveArtifacts 'dist/add2values'
+                }
+            }
         }
     }
 
