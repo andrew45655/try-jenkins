@@ -1,14 +1,14 @@
-
-def add2value(a,b):
-    print(f'{a}+{b}=',a+b)
-    return a+b
+from cal import *
 
 def main():
     '''
     add 2 values
     :return:
     '''
-    add2value(3,4)
+    result = input("enter 2 numbers with space to separate")
+    a,b=result.split(' ')
+    res=add2value(a,b)
+    print(res)
 
 
 if __name__=='__main__':
