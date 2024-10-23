@@ -4,7 +4,12 @@ def add2value(a,b):
     return a+b
 
 def main():
+    '''
+    add 2 values
+    :return:
+    '''
     add2value(3,4)
+
 
 if __name__=='__main__':
     main()
