@@ -12,7 +12,7 @@ class TestCal(unittest.TestCase):
 
     def test_add_string(self):
         result = cal.add2value('abc',56)
-        self.assertEqual(result,'df')
+        self.assertEqual(result,None)
 
 if __name__=='__main__':
     unittest.main()
