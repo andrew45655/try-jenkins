@@ -10,5 +10,9 @@ class TestCal(unittest.TestCase):
         result = cal.add2value('12.5',6.5)
         self.assertEqual(result,19.0)
 
+    def test_add_string(self):
+        result = cal.add2value('abc',56)
+        self.assertEqual(result,'df')
+
 if __name__=='__main__':
     unittest.main()
