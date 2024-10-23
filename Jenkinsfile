@@ -9,12 +9,12 @@ pipeline{
         }
         stage("Test"){
             steps{
-                sh "py.test  --junit-xml test_result/results.xml test_calc.py"
+                sh "py.test test_calc.py" //--junit-xml test_result/results.xml
             }
-            post{
-                always{
-                    junit 'test_result/results.xml'
-                }
+            //post{
+            //    always{
+            //        junit 'test_result/results.xml'
+            //    }
             }
         }
     }
