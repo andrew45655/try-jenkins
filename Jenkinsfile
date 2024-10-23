@@ -26,7 +26,7 @@ pipeline{
             }
             post{
                 always{
-                    archiveArtifacts 'dist/add2values'
+                    archiveArtifacts 'dist/cal'
                 }
             }
         }
