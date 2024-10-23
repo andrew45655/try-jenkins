@@ -15,7 +15,7 @@ pipeline{
             //    always{
             //        junit 'test_result/results.xml'
             //    }
-            }
+            //}
         }
     }
 
