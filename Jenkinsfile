@@ -4,7 +4,7 @@ pipeline{
         stage("Build"){
             steps{
                 sh "python -m py_compile main.py"
-//                 stash(nameL 'compiled-results', includes: '*.py*')
+                stash(nameL 'compiled-results', includes: '*.py*')
             }
         }
     }
